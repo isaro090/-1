@@ -563,4 +563,6 @@ fn main(){
         })
         .invoke_handler(tauri::generate_handler![keyai_handle])
         .run(tauri::generate_context!())
-        .e
+        .expect("Ошибка запуска KeyAI 1");
+}
+
