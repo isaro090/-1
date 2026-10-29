@@ -294,7 +294,7 @@ async fn responses_json(core:&Core,key:&str,body:&Value)->Result<Value,String>{
 
 async fn responses_chat(core:&Core,message:&Value,key:&str,body:&Value)->Result<String,String>{
     let messages=body["messages"].as_array().cloned().unwrap_or_default();
-    let instructions=messages.iter().find(|m|m["role"]=="system").and_then(|m|m["content"].as_str()).unwrap_or("");
+    let instructions=messages.iter().find(|m|m["role"]=="system").and_then(|m|m["content"].as_str()).unwrap_or("").to_string();
     let input:Vec<Value>=messages.into_iter().filter(|m|m["role"]!="system").collect();
     let mut request=json!({"model":message["model"],"instructions":instructions,"input":input});
     if let Some(effort)=body["reasoning_effort"].as_str(){request["reasoning"]=json!({"effort":effort});}
@@ -316,7 +316,7 @@ fn emit_answer(app:&AppHandle<VersoRuntime>,id:&str,text:&str){
 
 async fn responses_agent(core:&Core,app:&AppHandle<VersoRuntime>,message:&Value,key:&str,body:&Value,id:&str)->Result<String,String>{
     let messages=body["messages"].as_array().cloned().unwrap_or_default();
-    let instructions=messages.iter().find(|m|m["role"]=="system").and_then(|m|m["content"].as_str()).unwrap_or("");
+    let instructions=messages.iter().find(|m|m["role"]=="system").and_then(|m|m["content"].as_str()).unwrap_or("").to_string();
     let input:Vec<Value>=messages.into_iter().filter(|m|m["role"]!="system").collect();
     let tools=tool_definitions(true);
     let mut request=json!({"model":message["model"],"instructions":instructions,"input":input,"tools":tools,"tool_choice":"auto","parallel_tool_calls":false});
@@ -485,7 +485,7 @@ fn run_terminal(message:&Value)->Result<Value,String>{
     Ok(json!({"approved":true,"output":output,"exitCode":status.code().unwrap_or(-1),"cwd":cwd.to_string_lossy()}))
 }
 
-async fn keyai_handle(raw:String,state:State<'_,Shared>,app:AppHandle<VersoRuntime>,webview:tauri::Webview<VersoRuntime>)->Result<(),String>{
+#[tauri::command] async fn keyai_handle(raw:String,state:State<'_,Shared>,app:AppHandle<VersoRuntime>,webview:tauri::Webview<VersoRuntime>)->Result<(),String>{
     if webview.label()!="main"{return Err("Команды KeyAI доступны только основному окну приложения.".into());}
     let message:Value=serde_json::from_str(&raw).map_err(|e|format!("Некорректный запрос интерфейса: {e}"))?;
     let id=message["id"].as_str().unwrap_or("");
@@ -505,7 +505,7 @@ async fn keyai_handle(raw:String,state:State<'_,Shared>,app:AppHandle<VersoRunti
             match load_models(&core,provider).await{Ok(models)=>emit(&app,json!({"type":"models","id":id,"provider":provider,"models":models})),Err(error)=>emit_error(&app,id,error)}
         }
         "chat"=>{
-            if let Err(error)=send_chat(core,&app,message.clone()).await{emit_error(&app,id,error);}
+            if let Err(error)=send_chat(core,app.clone(),message.clone()).await{emit_error(&app,id,error);}
         }
         "workspace"=>{
             let result:Result<String,String>=match message["action"].as_str().unwrap_or(""){
@@ -563,6 +563,4 @@ fn main(){
         })
         .invoke_handler(tauri::generate_handler![keyai_handle])
         .run(tauri::generate_context!())
-        .expect("Ошибка запуска KeyAI 1");
-}
-
+        .e
