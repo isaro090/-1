@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">KeyAI 1 — макет интерфейса</title>
+  <desc id="desc">Тёмное приложение с зелёными сообщениями пользователя, тремя режимами и встроенным браузером.</desc>
+  <defs>
+    <linearGradient id="green" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#146346"/><stop offset="1" stop-color="#0b4832"/></linearGradient>
+    <linearGradient id="accent" x1="0" x2="1"><stop stop-color="#35bb78"/><stop offset="1" stop-color="#55d994"/></linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="12" stdDeviation="18" flood-color="#000" flood-opacity=".32"/></filter>
+    <style>
+      text{font-family:Inter,"Segoe UI",sans-serif;fill:#ededed}.muted{fill:#969696}.dim{fill:#727272}.small{font-size:12px}.tiny{font-size:10px}.medium{font-size:14px}.bold{font-weight:650}.line{stroke:#303030;stroke-width:1}
+    </style>
+  </defs>
+  <rect width="1600" height="900" rx="18" fill="#151515"/>
+  <rect width="1600" height="42" rx="18" fill="#191919"/>
+  <path d="M0 40H1600" stroke="#2c2c2c"/>
+  <circle cx="23" cy="21" r="6" fill="#ff6058"/><circle cx="44" cy="21" r="6" fill="#ffbd2e"/><circle cx="65" cy="21" r="6" fill="#28c840"/>
+  <text x="800" y="26" text-anchor="middle" class="small muted">KeyAI 1</text>
+  <rect x="0" y="42" width="64" height="858" fill="#131313"/><path d="M64 42V900" class="line"/>
+  <rect x="12" y="57" width="40" height="40" rx="14" fill="url(#accent)"/><text x="32" y="84" text-anchor="middle" font-size="21" font-weight="700" fill="#092518">K</text>
+  <rect x="12" y="116" width="40" height="40" rx="13" fill="#292929"/><path d="M24 137l8-8 8 8v9H27v-9" fill="none" stroke="#e9e9e9" stroke-width="1.8" stroke-linejoin="round"/>
+  <circle cx="32" cy="188" r="17" fill="#202020"/><path d="M32 179v10l6 4" fill="none" stroke="#999" stroke-width="1.8" stroke-linecap="round"/>
+  <rect x="12" y="218" width="40" height="40" rx="13" fill="#202020"/><path d="M24 228h15v20H24zM20 233v19h15" fill="none" stroke="#999" stroke-width="1.6"/>
+  <circle cx="32" cy="868" r="18" fill="#24b66e"/><text x="32" y="873" text-anchor="middle" class="tiny bold" fill="#fff">MM</text>
+  <rect x="64" y="42" width="246" height="858" fill="#1a1a1a"/><path d="M310 42V900" class="line"/>
+  <text x="87" y="80" font-size="18" font-weight="650">KeyAI</text><text x="150" y="80" class="tiny muted" letter-spacing="1.2">WORKSPACE</text>
+  <rect x="82" y="103" width="210" height="38" rx="11" fill="#222" stroke="#343434"/><text x="98" y="127" class="medium">＋　Новая сессия</text>
+  <rect x="82" y="153" width="210" height="34" rx="10" fill="#222"/><text x="98" y="175" class="small muted">⌕　Поиск по сессиям</text>
+  <text x="88" y="225" class="small bold muted">РАБОЧИЕ СЕССИИ</text>
+  <rect x="77" y="238" width="219" height="39" rx="10" fill="#2a2a2a"/><text x="96" y="263" class="medium">⌘　Новая рабочая сессия</text>
+  <text x="88" y="311" class="small bold muted">НЕДАВНИЕ</text>
+  <text x="96" y="346" class="small">Разобрать ошибку сборки</text>
+  <text x="96" y="383" class="small muted">План пилотной серии</text>
+  <text x="96" y="420" class="small muted">Новая рабочая сессия</text>
+  <path d="M82 829H292" class="line"/><circle cx="103" cy="862" r="17" fill="#2cb875"/><text x="103" y="866" text-anchor="middle" class="tiny bold">MM</text><text x="130" y="858" class="small bold">Локальный профиль</text><text x="130" y="875" class="tiny muted">Настройки провайдера</text>
+  <rect x="310" y="42" width="1290" height="55" fill="#171717"/><path d="M310 96H1600" class="line"/>
+  <text x="335" y="76" class="medium bold">Рабочее место</text><text x="462" y="76" class="small dim">/</text><text x="481" y="76" class="small muted">Кодинг и браузер</text>
+  <text x="1178" y="75" class="small muted">▱　Папка: KeyAI1</text><rect x="1342" y="55" width="98" height="31" rx="9" fill="#252525"/><text x="1361" y="75" class="small">▣　Браузер</text><text x="1461" y="75" class="small muted">⚙ Настроить API</text>
+  <rect x="310" y="97" width="790" height="803" fill="#151515"/><path d="M1100 97V900" class="line"/>
+  <text x="355" y="148" class="small muted">КОДИНГ · ФАЙЛЫ　/　СРЕДА KEYAI 1</text>
+  <text x="355" y="187" font-size="25" font-weight="620">Продолжим работу над проектом</text>
+  <text x="355" y="215" class="small muted">Выберите модель и задачу — агент сможет менять файлы в выбранной папке.</text>
+  <rect x="587" y="247" width="459" height="112" rx="18" fill="#202020" stroke="#2c2c2c"/>
+  <text x="610" y="278" class="tiny muted">РАБОЧАЯ ПАПКА</text><text x="610" y="307" class="medium bold">C:\Projects\KeyAI1</text><text x="610" y="335" class="small" fill="#64d495">✓　Файлы доступны агенту с историей версий</text>
+  <rect x="615" y="387" width="431" height="99" rx="19" fill="url(#green)" stroke="#277d56"/>
+  <text x="640" y="418" class="small" fill="#e5fff0">Пользователь</text><text x="640" y="448" class="medium" fill="#f1fff5">Разбери структуру и исправь ошибку сборки.</text><text x="640" y="470" class="small" fill="#e0f8e9">Сначала посмотри на файлы проекта.</text>
+  <circle cx="372" cy="527" r="17" fill="#202820" stroke="#315c43"/><text x="372" y="532" text-anchor="middle" class="small bold" fill="#76d99d">K</text>
+  <text x="403" y="522" class="small bold">KeyAI 1</text><text x="403" y="550" class="small">Просматриваю папку проекта. Сейчас проверю конфигурацию</text><text x="403" y="572" class="small">сборки и связанные скрипты.</text>
+  <rect x="403" y="594" width="390" height="36" rx="9" fill="#1e1e1e" stroke="#303030"/><circle cx="420" cy="612" r="4" fill="#4bc681"/><text x="435" y="616" class="tiny muted">Читаю Cargo.toml</text><text x="744" y="616" class="tiny muted">ЗАВЕРШЕНО</text>
+  <rect x="403" y="638" width="390" height="36" rx="9" fill="#1e1e1e" stroke="#303030"/><circle cx="420" cy="656" r="4" fill="#4bc681"/><text x="435" y="660" class="tiny muted">Проверяю build.rs</text><text x="744" y="660" class="tiny muted">ЗАВЕРШЕНО</text>
+  <rect x="353" y="771" width="704" height="94" rx="22" fill="#252525" stroke="#3b3b3b" filter="url(#shadow)"/>
+  <text x="378" y="804" class="small muted">Опишите задачу или вставьте код…</text>
+  <text x="379" y="844" font-size="18" fill="#aaa">＋</text>
+  <rect x="405" y="824" width="148" height="29" rx="10" fill="#313131"/><text x="419" y="843" class="tiny">Кодинг · файлы　⌄</text>
+  <rect x="565" y="824" width="199" height="29" rx="10" fill="#313131"/><text x="580" y="843" class="tiny">GPT-6.1 Sol · OpenAI　⌄</text>
+  <rect x="774" y="824" width="111" height="29" rx="10" fill="#313131"/><text x="791" y="843" class="tiny">Средний　⌄</text>
+  <circle cx="1016" cy="839" r="16" fill="url(#accent)"/><path d="M1016 847v-16m-6 6 6-6 6 6" fill="none" stroke="#0c2617" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="1100" y="97" width="500" height="803" fill="#171717"/>
+  <rect x="1100" y="97" width="500" height="48" fill="#1d1d1d"/><path d="M1100 144H1600" class="line"/>
+  <rect x="1115" y="106" width="128" height="30" rx="9" fill="#2a2a2a"/><text x="1130" y="126" class="tiny">⌘　GitHub</text><text x="1220" y="126" class="tiny dim">×</text>
+  <rect x="1253" y="106" width="25" height="30" rx="8" fill="#292929"/><text x="1260" y="126" class="medium muted">＋</text>
+  <rect x="1287" y="106" width="232" height="30" rx="8" fill="#252525" stroke="#373737"/><text x="1300" y="126" class="tiny muted">https://github.com/…</text><rect x="1525" y="106" width="62" height="30" rx="8" fill="#286c4b"/><text x="1539" y="126" class="tiny">Перейти</text>
+  <rect x="1127" y="169" width="446" height="684" rx="13" fill="#f7f8fa"/>
+  <rect x="1127" y="169" width="446" height="47" rx="13" fill="#f2f4f7"/><circle cx="1150" cy="192" r="10" fill="#20232a"/><path d="M1147 192h6m-3-3v6" stroke="#fff" stroke-width="1.4"/>
+  <text x="1167" y="196" font-size="12" font-weight="650" fill="#20232a">owner / keyai1</text><rect x="1501" y="181" width="53" height="22" rx="11" fill="#e7ebef"/><text x="1512" y="196" font-size="10" fill="#555">Code</text>
+  <text x="1160" y="259" font-size="22" font-weight="650" fill="#20232a">KeyAI 1</text><text x="1160" y="288" font-size="11" fill="#525b66">AI workspace for Windows · experimental Servo preview</text>
+  <path d="M1150 307H1550" stroke="#e1e4e8"/>
+  <text x="1160" y="343" font-size="15" font-weight="650" fill="#252a31">Build and run locally</text>
+  <rect x="1160" y="365" width="378" height="100" rx="8" fill="#f6f8fa" stroke="#d9dee4"/><text x="1178" y="390" font-family="Consolas,monospace" font-size="11" fill="#3b4652">git clone &lt;your-repository&gt;</text><text x="1178" y="414" font-family="Consolas,monospace" font-size="11" fill="#3b4652">cd KeyAI1</text><text x="1178" y="438" font-family="Consolas,monospace" font-size="11" fill="#3b4652">BUILD-WINDOWS.cmd</text>
+  <rect x="1160" y="490" width="378" height="81" rx="8" fill="#f8fafc" stroke="#e1e4e8"/><text x="1178" y="518" font-size="12" font-weight="650" fill="#252a31">Servo / Verso preview</text><text x="1178" y="541" font-size="11" fill="#66717c">The embedded browser is experimental. Some websites may not render.</text>
+  <rect x="1100" y="874" width="500" height="26" fill="#151515"/><circle cx="1117" cy="887" r="3.5" fill="#40bf79"/><text x="1128" y="891" class="tiny muted">Готово</text><text x="1558" y="891" text-anchor="end" class="tiny dim">Servo / Verso</text>
+</svg>

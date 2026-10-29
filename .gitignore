@@ -1,0 +1,12 @@
+/src-tauri/target/
+/src-tauri/versoview/
+/src-tauri/gen/
+/artifacts/
+*.log
+*.key
+*.pem
+.env
+.env.*
+!.env.example
+Thumbs.db
+Desktop.ini
