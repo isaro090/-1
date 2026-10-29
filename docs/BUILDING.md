@@ -6,13 +6,13 @@
 2. Установите Visual Studio Build Tools с компонентом **Desktop development with C++**.
 3. Скачайте исходники этого каталога и запустите `BUILD-WINDOWS.cmd`.
 4. Дождитесь загрузки Rust crates и предварительно собранного `versoview` для Servo/Verso.
-5. Ищите установщик `.exe` и ZIP в `src-tauri\target\release\bundle\`.
+5. Ищите установщик `.exe` в `src-tauri\target\release\bundle\nsis\` и ZIP-архив с установщиком в `src-tauri\target\release\bundle\`.
 
 Скрипт проверяет Cargo/Rust и устанавливает `tauri-cli` через Cargo, если его нет. Для сборки нужны интернет и место для кэша Rust crates, браузерного runtime и установщика.
 
 ## GitHub Actions
 
-Workflow `.github/workflows/build-windows.yml` запускается вручную, при push в `main` и при теге `v*`. Windows runner устанавливает Rust и NSIS, собирает x64 NSIS installer и ZIP и сохраняет их как workflow artifact. Для `v*` workflow прикладывает файлы к GitHub Release.
+Workflow `.github/workflows/build-windows.yml` запускается вручную, при push в `main` и при теге `v*`. Windows runner устанавливает Rust и NSIS, собирает x64 NSIS installer, упаковывает его в ZIP и сохраняет оба файла как workflow artifacts. Для `v*` workflow прикладывает файлы к GitHub Release.
 
 1. Создайте пустой GitHub-репозиторий.
 2. Загрузите в него содержимое папки проекта.

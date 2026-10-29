@@ -21,7 +21,7 @@
 
 ## Быстрая сборка Windows
 
-На Windows x64 установите Rust через [rustup](https://www.rust-lang.org/tools/install) и Visual Studio Build Tools с компонентом **Desktop development with C++**. Затем запустите `BUILD-WINDOWS.cmd`. Он соберёт приложение и установщик NSIS/ZIP в `src-tauri\target\release\bundle\`.
+На Windows x64 установите Rust через [rustup](https://www.rust-lang.org/tools/install) и Visual Studio Build Tools с компонентом **Desktop development with C++**. Затем запустите `BUILD-WINDOWS.cmd`. Он соберёт приложение и установщик NSIS и ZIP-архив с установщиком в `src-tauri\target\release\bundle\`.
 
 Если Rust CLI Tauri ещё не установлен, скрипт предложит установить его через Cargo. Интернет нужен для загрузки Rust crates и официального предварительно собранного `versoview` для Servo/Verso.
 

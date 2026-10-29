@@ -28,7 +28,7 @@
   },
   "bundle": {
     "active": true,
-    "targets": ["nsis", "zip"],
+    "targets": ["nsis"],
     "icon": ["icons/keyai1.ico"],
     "externalBin": ["versoview/versoview"]
   }

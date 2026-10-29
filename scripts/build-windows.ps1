@@ -16,8 +16,12 @@ if (-not (Get-Command cargo-tauri -ErrorAction SilentlyContinue)) {
 }
 Push-Location (Join-Path $projectRoot 'src-tauri')
 try {
-    & cargo tauri build --bundles nsis,zip
+    & cargo tauri build --bundles nsis
     if ($LASTEXITCODE -ne 0) { throw 'Tauri build завершился с ошибкой.' }
+    $installer = Get-ChildItem -Path 'target\release\bundle\nsis' -Filter '*.exe' -File | Select-Object -First 1
+    if (-not $installer) { throw 'NSIS installer не найден.' }
+    Compress-Archive -LiteralPath $installer.FullName -DestinationPath 'target\release\bundle\KeyAI1-Windows-x64.zip' -Force
+
     Write-Host "Готово. Файлы находятся в $projectRoot\src-tauri\target\release\bundle" -ForegroundColor Green
 } finally {
     Pop-Location
